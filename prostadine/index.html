@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health News 2025</title>
+    <style>
+        /* --- ESTILO GERAL --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #eeeeee;
+            color: #333;
+            line-height: 1.5;
+            /* Impede rolagem enquanto o popup está aberto (opcional) */
+            overflow: hidden; 
+        }
+        .container {
+            background-color: #fff;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            /* Desfoque leve no fundo para destacar o popup */
+            filter: blur(3px); 
+        }
+
+        /* --- HEADLINES --- */
+        .date-label {
+            font-size: 14px;
+            color: #cc0000;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        h1 span { color: #cc0000; background: #ffffcc; }
+        p.subhead {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* --- VÍDEO FAKE (APENAS VISUAL AGORA) --- */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            border: 4px solid #000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: #000;
+        }
+        .video-wrapper img {
+            width: 100%;
+            display: block;
+            opacity: 0.9;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px; height: 80px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 3px solid #fff;
+            border-radius: 50%;
+        }
+        .play-button::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 55%;
+            transform: translate(-50%, -50%);
+            border-left: 22px solid #fff;
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* =========================================
+           ESTILO DO POP-UP (AGORA FIXO)
+           ========================================= */
+        .modal-overlay {
+            display: flex; /* JÁ COMEÇA ABERTO */
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cookie-box {
+            background-color: #ced4da;
+            width: 90%;
+            max-width: 600px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: left;
+            font-family: Arial, sans-serif;
+            position: relative;
+            border: 1px solid #999;
+        }
+
+        .cookie-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .cookie-text {
+            font-size: 15px;
+            color: #222;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        
+        .cookie-link {
+            color: #0033cc;
+            text-decoration: none;
+        }
+        .cookie-link:hover { text-decoration: underline; }
+
+        /* BOTÃO ACCEPT (SEU LINK) */
+        .accept-btn {
+            background-color: #0044cc;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .accept-btn:hover { background-color: #003399; }
+
+        .close-x {
+            position: absolute;
+            top: 10px; right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #555;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .container { padding: 15px 10px; margin: 0; }
+            .cookie-box { width: 95%; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="date-label">Scientific Discovery - November 2025</span>
+
+        <h1>Scientists Discover The Real <span>Root Cause</span> Of Prostate Problems</h1>
+        
+        <p class="subhead">This Cold Drink Might Trigger Your Prostate...</p>
+
+        <div class="video-wrapper">
+            <img src="prostadine.jpg" alt="Prostadine Video">
+            <div class="play-button"></div>
+        </div>
+
+        <div class="footer">
+            <p>Copyright 2025 - All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cookieModal">
+        <div class="cookie-box">
+            <span class="close-x" onclick="closePopup()">&times;</span>
+            
+            <div class="cookie-title">Cookie Policy</div>
+            
+            <p class="cookie-text">
+                This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to the use of cookies. For more information, please visit our <a href="#" class="cookie-link">Cookie Policy</a>.
+            </p>
+
+            <a href="https://theprostadine.com/video.php?aff_id=538495" class="accept-btn">
+                Accept
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Função para fechar o popup caso a pessoa clique no X
+        function closePopup() {
+            document.getElementById("cookieModal").style.display = "none";
+            document.querySelector(".container").style.filter = "none"; // Remove o desfoque
+            document.body.style.overflow = "auto"; // Libera a rolagem
+        }
+    </script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health News 2025</title>
+    <title>Scientific News 2025</title>
     <style>
         /* --- ESTILO GERAL --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,11 +12,9 @@
             background-color: #eeeeee;
             color: #333;
             line-height: 1.5;
-            /* Removemos o bloqueio de rolagem para evitar travar em telas pequenas */
-            overflow-x: hidden; 
+            /* Impede rolagem enquanto o popup está aberto */
+            overflow: hidden; 
         }
-
-        /* CONTAINER PRINCIPAL (SEM O BLUR QUE CAUSA O ERRO) */
         .container {
             background-color: #fff;
             max-width: 800px;
@@ -25,6 +23,8 @@
             border: 1px solid #ddd;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             text-align: center;
+            /* O EFEITO DE DESFOQUE QUE VOCÊ GOSTOU */
+            filter: blur(3px); 
         }
 
         /* --- HEADLINES --- */
@@ -57,163 +57,4 @@
             max-width: 700px;
             margin: 0 auto 30px auto;
             border: 4px solid #000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: #000;
-        }
-        .video-wrapper img {
-            width: 100%;
-            display: block;
-            opacity: 0.9;
-        }
-        .play-button {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px; height: 80px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 3px solid #fff;
-            border-radius: 50%;
-        }
-        .play-button::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 55%;
-            transform: translate(-50%, -50%);
-            border-left: 22px solid #fff;
-            border-top: 14px solid transparent;
-            border-bottom: 14px solid transparent;
-        }
-
-        /* --- FOOTER --- */
-        .footer {
-            margin-top: 40px;
-            font-size: 11px;
-            color: #999;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-
-        /* =========================================
-           POP-UP (FIXO E SEGURO)
-           ========================================= */
-        .modal-overlay {
-            display: flex; /* Começa aberto */
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.7); /* Fundo escuro transparente */
-            z-index: 99999; /* Garante que fique na frente de tudo */
-            justify-content: center;
-            align-items: center;
-            padding: 15px; /* Espaço nas bordas no celular */
-        }
-
-        .cookie-box {
-            background-color: #ced4da; /* Cinza do seu modelo */
-            width: 100%;
-            max-width: 600px;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            text-align: left;
-            font-family: Arial, sans-serif;
-            position: relative;
-            border: 1px solid #999;
-        }
-
-        .cookie-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
-            margin-bottom: 15px;
-        }
-
-        .cookie-text {
-            font-size: 15px;
-            color: #222;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
-        
-        .cookie-link {
-            color: #0033cc;
-            text-decoration: none;
-        }
-        .cookie-link:hover { text-decoration: underline; }
-
-        /* BOTÃO ACCEPT (SEU LINK KERAFEN) */
-        .accept-btn {
-            background-color: #0044cc;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block; /* Ocupa largura total no celular */
-            text-align: center;
-        }
-        .accept-btn:hover { background-color: #003399; }
-
-        .close-x {
-            position: absolute;
-            top: 10px; right: 15px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #555;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 600px) {
-            h1 { font-size: 24px; }
-            .container { padding: 15px 10px; margin: 0; }
-            .cookie-box { padding: 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <span class="date-label">Scientific Discovery - November 2025</span>
-
-        <h1>Top Podiatrists Reveal The Real <span>Root Cause</span> Of Stubborn Toenail Fungus</h1>
-        
-        <p class="subhead">This "Fungal Biofilm" Breakthrough Changes Everything...</p>
-
-        <div class="video-wrapper">
-            <img src="kerafen.jpg" alt="Kerafen Video">
-            <div class="play-button"></div>
-        </div>
-
-        <div class="footer">
-            <p>Copyright 2025 - All Rights Reserved.</p>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="cookieModal">
-        <div class="cookie-box">
-            <span class="close-x" onclick="closePopup()">&times;</span>
-            
-            <div class="cookie-title">Cookie Policy</div>
-            
-            <p class="cookie-text">
-                This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to the use of cookies. For more information, please visit our <a href="#" class="cookie-link">Cookie Policy</a>.
-            </p>
-
-            <a href="https://kerafen.com/report?aff_id=15947" class="accept-btn">
-                Accept
-            </a>
-        </div>
-    </div>
-
-    <script>
-        function closePopup() {
-            document.getElementById("cookieModal").style.display = "none";
-            // Não mexemos mais no filtro ou overflow para evitar bugs visuais
-        }
-    </script>
-
-</body>
-</html>
+            box-shadow: 0 10px 25px rgba(0,0,0,

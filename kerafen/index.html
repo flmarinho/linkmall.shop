@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scientific News 2025</title>
+    <title>Health News 2025</title>
     <style>
         /* --- ESTILO GERAL --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #eeeeee;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             color: #333;
-            line-height: 1.5;
-            /* Impede rolagem enquanto o popup está aberto */
-            overflow: hidden; 
+            /* Liberamos a rolagem para evitar travar a tela */
+            overflow-x: hidden; 
         }
+
+        /* CONTAINER (SEM DESFOQUE PARA NÃO DAR TELA CINZA) */
         .container {
             background-color: #fff;
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             border: 1px solid #ddd;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             text-align: center;
-            /* Desfoque leve no fundo */
-            filter: blur(3px); 
         }
 
-        /* --- HEADLINES --- */
+        /* --- TEXTOS --- */
         .date-label {
             font-size: 14px;
             color: #cc0000;
@@ -37,7 +35,7 @@
             display: block;
         }
         h1 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
             color: #000;
             margin-bottom: 15px;
@@ -54,22 +52,22 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto 30px auto;
             border: 4px solid #000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: #000;
+            background: #000; /* Fundo preto caso a imagem demore a carregar */
         }
         .video-wrapper img {
             width: 100%;
             display: block;
             opacity: 0.9;
         }
+        /* Botão Play */
         .play-button {
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px; height: 80px;
+            width: 70px; height: 70px;
             background: rgba(0, 0, 0, 0.7);
             border: 3px solid #fff;
             border-radius: 50%;
@@ -77,4 +75,26 @@
         .play-button::after {
             content: '';
             position: absolute;
-            top: 50%;
+            top: 50%; left: 55%;
+            transform: translate(-50%, -50%);
+            border-left: 20px solid #fff;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* =========================================
+           POP-UP (FUNDO ESCURO, CAIXA CLARA)
+           ========================================= */
+        .modal-overlay {
+            display: flex; /* Já começa visível */
+            position: fixed;
+            top: 0; left

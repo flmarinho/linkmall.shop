@@ -3,64 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calmea Officiel</title>
-    
+    <title>Calmea - Présentation Officielle</title>
+
     <script defer src="https://api.raads-trc.com/code/6277-728a820a-8e6b-4261-afc4-8ece627bc09c"></script>
 
     <style>
+        /* --- ESTILO BASE (IGUAL AO FIGNAR) --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #eeeeee; /* Fundo Cinza Padrão */
+            color: #333;
+            line-height: 1.5;
+            overflow: hidden; /* Trava a rolagem com popup aberto */
+        }
+
+        /* CAIXA PRINCIPAL (ESTILO VSL) */
+        .container {
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px 20px;
+            border: 1px solid #dcdcdc;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            /* Desfoque leve no fundo para destacar o popup */
+            filter: blur(3px); 
+        }
+
+        /* --- TEXTOS --- */
+        .date-label {
+            font-size: 14px;
+            color: #cc0000;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* Destaque em vermelho estilo Fignar */
+        h1 span { 
+            color: #cc0000; 
+            background: #ffffcc; /* Fundo amarelo marca-texto opcional */
+            padding: 0 5px;
+        }
+
+        p.subhead {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* --- VÍDEO FAKE (IMAGEM COM PLAY) --- */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            border: 5px solid #000; /* Borda preta grossa (Estilo VSL clássico) */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #000; /* Fundo preto preventivo */
+            cursor: pointer;
+        }
         
-        body, html {
-            height: 100%;
+        .video-wrapper img {
             width: 100%;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            overflow: hidden; /* Trava a rolagem */
+            display: block;
+            opacity: 0.9; /* Leve escurecida para o play aparecer mais */
         }
 
-        /* --- CONFIGURAÇÃO DO FUNDO (RESPONSIVO) --- */
-        .bg-image {
-            /* AQUI ESTÁ A CORREÇÃO PARA .PNG */
-            background-image: url('calmea.png');
-            
-            /* Isso faz a imagem cobrir 100% da tela (Mobile e Desktop) */
-            height: 100%; 
-            width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover; /* Estica a imagem para cobrir tudo */
-            
-            /* Desfoque inicial */
-            filter: blur(5px);
-            
+        /* BOTÃO DE PLAY (CSS PURO) */
+        .play-button {
             position: absolute;
-            top: 0; left: 0;
-            z-index: 1;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90px; height: 90px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 4px solid #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .play-button::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 55%;
+            transform: translate(-50%, -50%);
+            border-left: 25px solid #fff;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
         }
 
-        /* --- O POP-UP (FICA NA FRENTE) --- */
+        /* --- RODAPÉ --- */
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .footer a { color: #999; text-decoration: none; }
+
+        /* =========================================
+           POP-UP DE COOKIE (O SEGREDO DA CONVERSÃO)
+           ========================================= */
         .modal-overlay {
-            display: flex;
+            display: flex; /* Começa visível */
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.5); /* Escurece levemente o fundo */
-            z-index: 9999;
+            background-color: rgba(0,0,0,0.7); /* Fundo escuro */
+            z-index: 99999;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .cookie-box {
-            background-color: #f8f9fa;
+            background-color: #e9ecef; /* Cinza claro estilo sistema */
             width: 100%;
-            max-width: 500px;
+            max-width: 550px;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
             text-align: left;
             position: relative;
-            border: 2px solid #ffffff;
+            border: 2px solid #fff;
         }
 
         .cookie-title {
@@ -82,37 +159,85 @@
             text-decoration: underline;
         }
 
-        /* BOTÃO DE AÇÃO */
+        /* BOTÃO ACCEPTER (AZUL CALMEA) */
         .accept-btn {
-            background-color: #0056b3;
+            background-color: #0044cc; /* Azul Forte */
             color: white;
             font-size: 18px;
             font-weight: bold;
             padding: 15px 0;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             text-decoration: none;
             display: block;
             width: 100%;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.2s;
         }
-        .accept-btn:hover { background-color: #004494; }
+        .accept-btn:hover { background-color: #003399; }
 
         .close-x {
             position: absolute;
             top: 15px; right: 20px;
             font-size: 26px;
-            color: #999;
+            font-weight: bold;
+            color: #777;
             cursor: pointer;
         }
         .close-x:hover { color: #000; }
 
+        /* RESPONSIVO */
+        @media (max-width: 600px) {
+            h1 { font-size: 26px; }
+            .container { padding: 20px 15px; margin: 0; min-height: 100vh; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="bg-image"></div>
+    <div class="container">
+        <span class="date-label">Découverte Scientifique 2025</span>
 
-    <div class="modal-overlay
+        <h1>La Nouvelle Solution Naturelle pour un <span>Soulagement Immédiat</span> et Durable</h1>
+        
+        <p class="subhead">Regardez cette courte vidéo avant qu'elle ne soit retirée...</p>
+
+        <div class="video-wrapper">
+            <img src="calmea.png" alt="Vidéo de présentation Calmea">
+            <div class="play-button"></div>
+        </div>
+
+        <div class="footer">
+            <p>Copyright 2025 - Tous droits réservés.</p>
+            <br>
+            <p>Ce site ne fait pas partie du site web Facebook ou de Facebook Inc. De plus, ce site n'est PAS approuvé par Facebook en aucune façon.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cookieModal">
+        <div class="cookie-box">
+            <span class="close-x" onclick="closePopup()">&times;</span>
+            
+            <div class="cookie-title">Politique de Cookies</div>
+            
+            <p class="cookie-text">
+                Ce site utilise des cookies pour assurer le bon fonctionnement des vidéos et personnaliser votre expérience. En cliquant sur "ACCEPTER", vous acceptez l'utilisation de nos cookies et accédez à la présentation. <a href="#" class="cookie-link">En savoir plus</a>.
+            </p>
+
+            <a href="https://www.tracxpert.com/2FTMHTNB/ZT3QF2Q/" class="accept-btn">
+                ACCEPTER
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.getElementById("cookieModal").style.display = "none";
+            document.querySelector(".container").style.filter = "none"; // Remove o desfoque
+            document.body.style.overflow = "auto"; // Destrava a tela
+        }
+    </script>
+
+</body>
+</html>

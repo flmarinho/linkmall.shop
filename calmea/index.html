@@ -11,127 +11,144 @@
   <script defer src="https://api.raads-trc.com/code/6277-728a820a-8e6b-4261-afc4-8ece627bc09c"></script>
 
   <style>
-    /* Estilos gerais idênticos ao Fignar */
+    /* Reset básico */
     body, html {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      height: 100%;
+      width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    /* A IMAGEM DE FUNDO */
+    .background {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      
+      /* IMPORTANTE: Nome da imagem exato */
+      background-image: url('Calmea.jpg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+      /* Filtro escuro */
+      filter: brightness(45%); 
+    }
+
+    /* O MODAL (CAIXA DE COOKIE) */
+    .modal-wrapper {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      z-index: 999;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-    }
-
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      /* SUA IMAGEM AQUI */
-      background-image: url('calmea.png');
-      filter: brightness(45%); /* Escurece o fundo igual ao original */
-      z-index: -1;
-    }
-
-    /* Estilo do modal (Igual ao Fignar) */
-    .modal {
-      background-color: #c2c6cb;
-      border: white 2px solid;
-      padding: 40px;
-      margin: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      text-align: left;
-      width: 700px; /* Largura padrão desktop */
-      position: relative;
-      z-index: 1;
-      cursor: pointer; /* Indica que é clicável */
-    }
-
-    /* Botão de fechar */
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: transparent;
-      border: none;
-      font-size: 1.5em;
-      color: #333;
       cursor: pointer;
     }
 
+    .modal {
+      background-color: #c2c6cb;
+      border: 2px solid white;
+      padding: 40px;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      text-align: left;
+      width: 90%;
+      max-width: 700px;
+      position: relative;
+    }
+
+    /* O "X" AGORA É UM LINK REAL */
+    a.close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      text-decoration: none; /* Tira o sublinhado */
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1;
+    }
+    a.close-btn:hover {
+      color: #000;
+    }
+
     .modal h2 {
-      margin: 0 0 10px;
-      font-size: 1.75rem;
+      margin: 0 0 15px;
+      font-size: 1.5rem;
+      color: #000;
     }
 
     .modal p {
-      font-size: 1em;
+      font-size: 1rem;
       margin-bottom: 20px;
+      color: #333;
+      line-height: 1.4;
     }
 
-    .afiliate-link {
-      margin-top: 5px;
+    /* O BOTÃO AGORA É UM LINK REAL */
+    a.afiliate-link {
       background: #0043ff;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 1em;
-      text-decoration: none;
-      padding: 9px 15px 10px 15px;
+      font-size: 1rem;
+      text-decoration: none; /* Tira o sublinhado */
+      padding: 12px 20px;
       display: inline-block;
+      font-weight: bold;
     }
 
-    .afiliate-link:hover {
+    a.afiliate-link:hover {
       background: #0033cc;
     }
 
-    /* Responsividade para Celular */
-    @media (max-width: 431px) {
-      .modal {
-        width: 300px; /* Largura ajustada para mobile */
-        padding: 20px;
-      }
-      .modal h2 { font-size: 1.4rem; }
+    /* Ajuste para celular */
+    @media (max-width: 480px) {
+      .modal { padding: 25px; }
+      .modal h2 { font-size: 1.3rem; }
     }
   </style>
 
   <script>
-    // Função que clica no link escondido
-    function clickLink() {
-      document.getElementById("goToPage").click();
+    // Função para cliques no FUNDO (área cinza fora da caixa)
+    function goOffer() {
+      // Redireciona para o mesmo link
+      window.location.href = "https://www.tracxpert.com/2FTMHTNB/ZT3QF2Q/";
     }
   </script>
 </head>
 
 <body>
+
   <div class="background"></div>
   
-  <div class="modal" id="clicable">
-    <button class="close-btn">×</button>
-    <h2>Politique de Cookies</h2>
-    <p>
-      Ce site utilise des cookies pour personnaliser le contenu, fournir des fonctionnalités de médias sociaux et analyser notre trafic. En cliquant sur Accepter, vous consentez à l'utilisation de cookies. Pour plus d'informations, visitez notre <span style="color: #0001ff;">Politique de Cookies</span>.
-    </p>
-    <button class="afiliate-link">ACCEPTER</button>
+  <div class="modal-wrapper" onclick="if(event.target === this) goOffer()">
+    
+    <div class="modal">
+      <a href="https://www.tracxpert.com/2FTMHTNB/ZT3QF2Q/" class="close-btn">&times;</a>
+      
+      <h2>Politique de Cookies</h2>
+      <p>
+        Ce site utilise des cookies pour personnaliser le contenu, fournir des fonctionnalités de médias sociaux et analyser notre trafic. En cliquant sur Accepter, vous consentez à l'utilisation de cookies. Pour plus d'informations, visitez notre <span style="color: #0001ff;">Politique de Cookies</span>.
+      </p>
+      
+      <a href="https://www.tracxpert.com/2FTMHTNB/ZT3QF2Q/" class="afiliate-link">ACCEPTER</a>
+    </div>
+
   </div>
-
-  <a id="goToPage" aria-label="go to your page" href="https://www.tracxpert.com/2FTMHTNB/ZT3QF2Q/" style="display:none;"></a>
-
-  <script>
-    // Qualquer clique na caixa (modal) aciona o redirecionamento
-    document.getElementById("clicable").addEventListener("click", function (e) {
-      // O stopPropagation não é necessário se queremos que tudo clique, 
-      // mas mantendo a lógica: ao clicar na div, chamamos a função.
-      clickLink();
-    });
-  </script>
 
 </body>
 </html>

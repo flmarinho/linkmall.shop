@@ -3,113 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calmea - Site Officiel</title>
+    <title>Calmea Officiel</title>
     
     <script defer src="https://api.raads-trc.com/code/6277-728a820a-8e6b-4261-afc4-8ece627bc09c"></script>
 
     <style>
-        /* --- ESTILO GERAL --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa; /* Fundo mais clean/loja */
-            color: #333;
-            line-height: 1.5;
-            overflow: hidden; /* Trava rolagem */
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            overflow: hidden; /* Trava a rolagem */
+            height: 100vh;
+            width: 100vw;
         }
-        
-        /* CONTAINER PRINCIPAL (ESTILO LOJA) */
-        .container {
-            background-color: #fff;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-            min-height: 100vh;
+
+        /* --- O FUNDO (SÓ A IMAGEM) --- */
+        .background-only {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             /* Desfoque para focar no popup */
-            filter: blur(4px); 
+            filter: blur(5px);
+            z-index: 1;
         }
 
-        /* --- LOGO / TOPO --- */
-        .brand-name {
-            font-size: 36px;
-            font-weight: bold;
-            color: #000;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-        }
-
-        .status-badge {
-            display: inline-block;
-            background-color: #28a745; /* Verde Sucesso */
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-
-        /* --- HEADLINE DE VENDA --- */
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 10px;
-            max-width: 600px;
-        }
-        
-        p.subhead {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        /* --- IMAGEM DO PRODUTO (VITRINE) --- */
-        .product-wrapper {
+        .background-only img {
             width: 100%;
-            max-width: 500px;
-            margin-bottom: 30px;
-        }
-        .product-wrapper img {
-            width: 100%;
+            max-width: 1200px; /* Limite para não estourar em telas gigantes */
             height: auto;
-            display: block;
-            /* Sombra suave para parecer produto 3D */
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); 
+            max-height: 100vh;
+            object-fit: contain; /* Garante que a imagem apareça inteira */
         }
 
-        /* --- RODAPÉ --- */
-        .footer {
-            margin-top: auto;
-            font-size: 12px;
-            color: #aaa;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            width: 100%;
-        }
-
-        /* =========================================
-           POP-UP DE COOKIE (MECANISMO DE CLIQUE)
-           ========================================= */
+        /* --- O POP-UP --- */
         .modal-overlay {
             display: flex;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0,0,0,0.5); /* Escurece um pouco a imagem de fundo */
             z-index: 9999;
             justify-content: center;
             align-items: center;
-            padding: 15px;
+            padding: 20px;
         }
 
         .cookie-box {
-            background-color: #e9ecef; /* Cinza profissional */
+            background-color: #e9ecef;
             width: 100%;
             max-width: 550px;
             padding: 30px;
@@ -139,9 +82,8 @@
             text-decoration: underline;
         }
 
-        /* BOTÃO DE AÇÃO */
         .accept-btn {
-            background-color: #0056b3; /* Azul "Trust" */
+            background-color: #0056b3;
             color: white;
             font-size: 18px;
             font-weight: bold;
@@ -153,7 +95,6 @@
             display: block;
             width: 100%;
             text-align: center;
-            transition: background 0.3s;
         }
         .accept-btn:hover { background-color: #004494; }
 
@@ -168,23 +109,8 @@
 </head>
 <body>
 
-    <div class="container">
-        
-        <div class="brand-name">calmea</div>
-        
-        <div class="status-badge">✓ Site Officiel</div>
-
-        <h1>Choisissez votre chemin vers un soulagement durable</h1>
-        <p class="subhead">Offre Exclusive Internet - Stock Limité</p>
-
-        <div class="product-wrapper">
-            <img src="calmea.png" alt="Calmea Pack">
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2025 Calmea. Tous droits réservés.</p>
-            <p>Termes et Conditions | Politique de Confidentialité</p>
-        </div>
+    <div class="background-only">
+        <img src="calmea.png" alt="Background">
     </div>
 
     <div class="modal-overlay" id="cookieModal">
@@ -206,7 +132,7 @@
     <script>
         function closePopup() {
             document.getElementById("cookieModal").style.display = "none";
-            document.querySelector(".container").style.filter = "none";
+            document.querySelector(".background-only").style.filter = "none"; // Remove o blur ao fechar
             document.body.style.overflow = "auto";
         }
     </script>

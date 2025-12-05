@@ -3,103 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualités Santé 2025</title>
+    <title>Calmea - Site Officiel</title>
     
     <script defer src="https://api.raads-trc.com/code/6277-728a820a-8e6b-4261-afc4-8ece627bc09c"></script>
 
     <style>
-        /* --- ESTILO GERAL (Igual ao Prostadine) --- */
+        /* --- ESTILO GERAL --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #eeeeee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa; /* Fundo mais clean/loja */
             color: #333;
             line-height: 1.5;
-            overflow: hidden; /* Trava a rolagem com popup aberto */
+            overflow: hidden; /* Trava rolagem */
         }
+        
+        /* CONTAINER PRINCIPAL (ESTILO LOJA) */
         .container {
             background-color: #fff;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
-            /* O desfoque no fundo que dá destaque ao popup */
-            filter: blur(3px); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Desfoque para focar no popup */
+            filter: blur(4px); 
         }
 
-        /* --- HEADLINES --- */
-        .date-label {
-            font-size: 14px;
-            color: #cc0000;
+        /* --- LOGO / TOPO --- */
+        .brand-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #28a745; /* Verde Sucesso */
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
+            margin-bottom: 30px;
         }
+
+        /* --- HEADLINE DE VENDA --- */
         h1 {
-            font-size: 32px;
-            font-weight: 800;
-            color: #000;
-            margin-bottom: 15px;
-            line-height: 1.2;
+            font-size: 28px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+            max-width: 600px;
         }
-        h1 span { color: #cc0000; background: #ffffcc; }
+        
         p.subhead {
             font-size: 18px;
-            color: #555;
-            margin-bottom: 25px;
+            color: #666;
+            margin-bottom: 30px;
         }
 
-        /* --- VÍDEO FAKE --- */
-        .video-wrapper {
-            position: relative;
+        /* --- IMAGEM DO PRODUTO (VITRINE) --- */
+        .product-wrapper {
             width: 100%;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            border: 4px solid #000;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: #000;
+            max-width: 500px;
+            margin-bottom: 30px;
         }
-        .video-wrapper img {
+        .product-wrapper img {
             width: 100%;
+            height: auto;
             display: block;
-            opacity: 0.9;
-        }
-        .play-button {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px; height: 80px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 3px solid #fff;
-            border-radius: 50%;
-        }
-        .play-button::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 55%;
-            transform: translate(-50%, -50%);
-            border-left: 22px solid #fff;
-            border-top: 14px solid transparent;
-            border-bottom: 14px solid transparent;
+            /* Sombra suave para parecer produto 3D */
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); 
         }
 
-        /* --- FOOTER --- */
+        /* --- RODAPÉ --- */
         .footer {
-            margin-top: 40px;
-            font-size: 11px;
-            color: #999;
+            margin-top: auto;
+            font-size: 12px;
+            color: #aaa;
             border-top: 1px solid #eee;
-            padding-top: 15px;
+            padding-top: 20px;
+            width: 100%;
         }
 
         /* =========================================
-           POP-UP DE COOKIE (EM FRANCÊS)
+           POP-UP DE COOKIE (MECANISMO DE CLIQUE)
            ========================================= */
         .modal-overlay {
-            display: flex; /* Já carrega aberto */
+            display: flex;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -107,23 +105,23 @@
             z-index: 9999;
             justify-content: center;
             align-items: center;
+            padding: 15px;
         }
 
         .cookie-box {
-            background-color: #ced4da;
-            width: 90%;
-            max-width: 600px;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            background-color: #e9ecef; /* Cinza profissional */
+            width: 100%;
+            max-width: 550px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             text-align: left;
-            font-family: Arial, sans-serif;
             position: relative;
-            border: 1px solid #999;
+            border: 2px solid #fff;
         }
 
         .cookie-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #000;
             margin-bottom: 15px;
@@ -131,64 +129,61 @@
 
         .cookie-text {
             font-size: 15px;
-            color: #222;
-            line-height: 1.4;
-            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 25px;
         }
         
         .cookie-link {
-            color: #0033cc;
-            text-decoration: none;
+            color: #0056b3;
+            text-decoration: underline;
         }
-        .cookie-link:hover { text-decoration: underline; }
 
-        /* BOTÃO ACCEPTER (LINK CALMEA) */
+        /* BOTÃO DE AÇÃO */
         .accept-btn {
-            background-color: #0044cc;
+            background-color: #0056b3; /* Azul "Trust" */
             color: white;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            padding: 10px 25px;
+            padding: 14px 0;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s;
         }
-        .accept-btn:hover { background-color: #003399; }
+        .accept-btn:hover { background-color: #004494; }
 
         .close-x {
             position: absolute;
-            top: 10px; right: 15px;
+            top: 15px; right: 20px;
             font-size: 24px;
-            font-weight: bold;
-            color: #555;
+            color: #777;
             cursor: pointer;
-        }
-        
-        @media (max-width: 600px) {
-            h1 { font-size: 24px; }
-            .container { padding: 15px 10px; margin: 0; }
-            .cookie-box { width: 95%; padding: 20px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <span class="date-label">Actualités Santé - Novembre 2025</span>
-
-        <h1>La Découverte Scientifique de 2025 pour un <span>Soulagement Durable</span> et Naturel</h1>
         
-        <p class="subhead">Ce rituel simple du matin pourrait tout changer...</p>
+        <div class="brand-name">calmea</div>
+        
+        <div class="status-badge">✓ Site Officiel</div>
 
-        <div class="video-wrapper">
-            <img src="calmea.png" alt="Calmea Video">
-            <div class="play-button"></div>
+        <h1>Choisissez votre chemin vers un soulagement durable</h1>
+        <p class="subhead">Offre Exclusive Internet - Stock Limité</p>
+
+        <div class="product-wrapper">
+            <img src="calmea.png" alt="Calmea Pack">
         </div>
 
         <div class="footer">
-            <p>Copyright 2025 - Tous droits réservés.</p>
+            <p>&copy; 2025 Calmea. Tous droits réservés.</p>
+            <p>Termes et Conditions | Politique de Confidentialité</p>
         </div>
     </div>
 
@@ -196,10 +191,10 @@
         <div class="cookie-box">
             <span class="close-x" onclick="closePopup()">&times;</span>
             
-            <div class="cookie-title">Politique de Cookies</div>
+            <div class="cookie-title">Politique de Confidentialité</div>
             
             <p class="cookie-text">
-                Ce site web utilise des cookies pour personnaliser le contenu, fournir des fonctionnalités de médias sociaux et analyser notre trafic. En cliquant sur Accepter, vous consentez à l'utilisation de cookies. <a href="#" class="cookie-link">En savoir plus</a>.
+                Nous utilisons des cookies pour garantir que vous bénéficiez de la meilleure expérience sur notre site officiel. En cliquant sur "ACCEPTER", vous accédez à l'offre réservée et acceptez nos conditions. <a href="#" class="cookie-link">En savoir plus</a>.
             </p>
 
             <a href="https://www.tracxpert.com/2FTMHTNB/ZT3QF2Q/" class="accept-btn">

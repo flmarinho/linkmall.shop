@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités Santé 2025</title>
+    
+    <script defer src="https://api.raads-trc.com/code/6277-728a820a-8e6b-4261-afc4-8ece627bc09c"></script>
+
+    <style>
+        /* --- ESTILO GERAL (Igual ao Prostadine) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #eeeeee;
+            color: #333;
+            line-height: 1.5;
+            overflow: hidden; /* Trava a rolagem com popup aberto */
+        }
+        .container {
+            background-color: #fff;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            /* O desfoque no fundo que dá destaque ao popup */
+            filter: blur(3px); 
+        }
+
+        /* --- HEADLINES --- */
+        .date-label {
+            font-size: 14px;
+            color: #cc0000;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        h1 span { color: #cc0000; background: #ffffcc; }
+        p.subhead {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        /* --- VÍDEO FAKE --- */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            border: 4px solid #000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: #000;
+        }
+        .video-wrapper img {
+            width: 100%;
+            display: block;
+            opacity: 0.9;
+        }
+        .play-button {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px; height: 80px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 3px solid #fff;
+            border-radius: 50%;
+        }
+        .play-button::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 55%;
+            transform: translate(-50%, -50%);
+            border-left: 22px solid #fff;
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            margin-top: 40px;
+            font-size: 11px;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* =========================================
+           POP-UP DE COOKIE (EM FRANCÊS)
+           ========================================= */
+        .modal-overlay {
+            display: flex; /* Já carrega aberto */
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cookie-box {
+            background-color: #ced4da;
+            width: 90%;
+            max-width: 600px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: left;
+            font-family: Arial, sans-serif;
+            position: relative;
+            border: 1px solid #999;
+        }
+
+        .cookie-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .cookie-text {
+            font-size: 15px;
+            color: #222;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        
+        .cookie-link {
+            color: #0033cc;
+            text-decoration: none;
+        }
+        .cookie-link:hover { text-decoration: underline; }
+
+        /* BOTÃO ACCEPTER (LINK CALMEA) */
+        .accept-btn {
+            background-color: #0044cc;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .accept-btn:hover { background-color: #003399; }
+
+        .close-x {
+            position: absolute;
+            top: 10px; right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #555;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            .container { padding: 15px 10px; margin: 0; }
+            .cookie-box { width: 95%; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="date-label">Actualités Santé - Novembre 2025</span>
+
+        <h1>La Découverte Scientifique de 2025 pour un <span>Soulagement Durable</span> et Naturel</h1>
+        
+        <p class="subhead">Ce rituel simple du matin pourrait tout changer...</p>
+
+        <div class="video-wrapper">
+            <img src="calmea.png" alt="Calmea Video">
+            <div class="play-button"></div>
+        </div>
+
+        <div class="footer">
+            <p>Copyright 2025 - Tous droits réservés.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cookieModal">
+        <div class="cookie-box">
+            <span class="close-x" onclick="closePopup()">&times;</span>
+            
+            <div class="cookie-title">Politique de Cookies</div>
+            
+            <p class="cookie-text">
+                Ce site web utilise des cookies pour personnaliser le contenu, fournir des fonctionnalités de médias sociaux et analyser notre trafic. En cliquant sur Accepter, vous consentez à l'utilisation de cookies. <a href="#" class="cookie-link">En savoir plus</a>.
+            </p>
+
+            <a href="https://www.tracxpert.com/2FTMHTNB/ZT3QF2Q/" class="accept-btn">
+                ACCEPTER
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.getElementById("cookieModal").style.display = "none";
+            document.querySelector(".container").style.filter = "none";
+            document.body.style.overflow = "auto";
+        }
+    </script>
+
+</body>
+</html>

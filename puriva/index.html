@@ -6,23 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kaufen Sie jetzt Puriva, ein hochwertiges Produkt mit schneller und sicherer Lieferung. Zufriedenheit garantiert oder Ihr Geld zurück. Holen Sie sich jetzt Ihr Produkt!" />
   <meta name="keywords" content="Puriva" />
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <meta http-equiv="Content-Language" content="de">
   <title>Puriva</title>
   <style>
-    /* Allgemeine Stile */
-    body,
-    html {
+    body, html {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
+      height: 100%;
+      font-family: Arial, sans-serif;
     }
 
     .background {
@@ -31,50 +23,37 @@
       left: 0;
       right: 0;
       bottom: 0;
+      background-image: url('puriva.png'); /* Alterar o caminho para a imagem */
       background-size: cover;
-      background-repeat: no-repeat;
-      filter: brightness(45%);
-      background-image: url('puriva.png'); /* Ändern Sie hier den Hintergrund auf die Puriva-Bilddatei */
+      background-position: center;
+      filter: brightness(50%);
       z-index: -1;
     }
 
-    @media (max-width: 431px) {
-      .background {
-        background-image: url('puriva.png'); /* Für kleinere Geräte */
-      }
-    }
-
-    /* Stil für den Inhalt */
     .content {
       text-align: center;
       color: white;
-      max-width: 90%;
-      margin: 0 auto;
+      padding: 20px;
+      z-index: 1;
     }
 
     h1 {
       font-size: 3em;
-      font-weight: bold;
-    }
-
-    h2 {
-      font-size: 2em;
-      margin-top: 10px;
+      margin: 20px 0;
     }
 
     p {
       font-size: 1.2em;
-      margin-top: 15px;
-      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     .cta-button {
-      margin-top: 30px;
+      display: inline-block;
       padding: 15px 30px;
-      background-color: #ff6f61;
+      font-size: 1.2em;
+      background-color: #FF6F61;
       color: white;
       text-decoration: none;
-      font-size: 1.2em;
       border-radius: 5px;
       transition: background-color 0.3s;
     }
@@ -83,6 +62,30 @@
       background-color: #e85c53;
     }
 
+    .section {
+      margin-top: 40px;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .section ul {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .section ul li {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
@@ -92,36 +95,33 @@
 
   <div class="content">
     <h1>Puriva Kapseln: Ihre natürliche Lösung für Gewichtsverlust!</h1>
-    <h2>Verwandeln Sie Ihre Gewichtsabnahme-Reise und verbessern Sie Ihre Darmgesundheit mit nur 2 Puriva-Kapseln pro Tag!</h2>
-    
-    <p><strong>Die Puriva Kapseln helfen Ihnen dabei:</strong></p>
-    <ul>
-      <li><strong>Den Hunger zu reduzieren:</strong> Kontrollieren Sie Ihren Appetit mit natürlichen Zutaten.</li>
-      <li><strong>Den Gewichtsverlust zu beschleunigen:</strong> Verbrennen Sie Fett schneller für einen aktiven Lebensstil.</li>
-      <li><strong>Die Verdauung zu verbessern:</strong> Reduzieren Sie Blähungen und lindern Sie Verstopfung.</li>
-      <li><strong>Die Energielevel zu steigern:</strong> Fühlen Sie sich den ganzen Tag über energiegeladen.</li>
-      <li><strong>Den Stoffwechsel zu beschleunigen:</strong> Fördern Sie die Fettverbrennung auf effektive Weise.</li>
-    </ul>
+    <p>Verwandeln Sie Ihre Gewichtsabnahme-Reise und verbessern Sie Ihre Darmgesundheit mit nur 2 Puriva-Kapseln pro Tag!</p>
+    <a href="#" class="cta-button">Jetzt Kaufen</a>
+  </div>
 
-    <h2>100% natürliche, wissenschaftlich bewährte Inhaltsstoffe</h2>
-    <p>Die Puriva Kapseln bestehen aus 100% natürlichen Zutaten, die wissenschaftlich bewiesen sind und bei folgenden Aspekten helfen:</p>
+  <div class="section">
+    <h2>Vorteile der Puriva Kapseln</h2>
     <ul>
-      <li>Appetithemmung</li>
-      <li>Fettverbrennung</li>
-      <li>Verbesserung der Verdauung</li>
-      <li>Steigerung der Energie und Stoffwechselbeschleunigung</li>
+      <li><strong>Reduzieren Sie den Hunger:</strong> Kontrollieren Sie Ihren Appetit mit natürlichen Zutaten.</li>
+      <li><strong>Beschleunigen Sie den Gewichtsverlust:</strong> Verbrennen Sie Fett schneller für einen aktiven Lebensstil.</li>
+      <li><strong>Verbessern Sie die Verdauung:</strong> Reduzieren Sie Blähungen und lindern Sie Verstopfung.</li>
+      <li><strong>Erhöhen Sie Ihre Energie:</strong> Fühlen Sie sich den ganzen Tag über energetisiert.</li>
+      <li><strong>Beschleunigen Sie den Stoffwechsel:</strong> Fördern Sie die Fettverbrennung auf effektive Weise.</li>
     </ul>
+  </div>
 
+  <div class="section">
     <h2>Warum Puriva wählen?</h2>
     <ul>
-      <li><strong>Sicher und effektiv:</strong> Hergestellt aus natürlichen, bewährten Inhaltsstoffen.</li>
+      <li><strong>Sicher und Effektiv:</strong> Hergestellt aus natürlichen, bewährten Inhaltsstoffen.</li>
       <li><strong>Wissenschaftlich getestet:</strong> Unterstützt durch Forschung zur Gewichtsregulierung.</li>
-      <li><strong>Einfache Anwendung:</strong> Nur 2 Kapseln pro Tag für optimale Ergebnisse.</li>
+      <li><strong>Einfach zu verwenden:</strong> Nur 2 Kapseln pro Tag für optimale Ergebnisse.</li>
     </ul>
+  </div>
 
-    <p><strong>Kaufen Sie jetzt zum besten Preis!</strong></p>
-    <p>Erhalten Sie 3 Monate Puriva für nur 1,22 € pro Tag. Profitieren Sie von 46% RABATT + kostenlosem Versand!</p>
-    
+  <div class="content">
+    <p><strong>Jetzt kaufen und 46% Rabatt sichern!</strong></p>
+    <p>Erhalten Sie 3 Monate Puriva für nur 1,22 € pro Tag. Profitieren Sie von kostenlosem Versand!</p>
     <a href="#" class="cta-button">Jetzt Kaufen</a>
   </div>
 

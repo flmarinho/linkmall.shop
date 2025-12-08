@@ -4,155 +4,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Offizielle Puriva Seite" />
+  <meta name="description" content="Kaufen Sie jetzt Puriva, ein hochwertiges Produkt mit schneller und sicherer Lieferung. Zufriedenheit garantiert oder Ihr Geld zurück. Holen Sie sich jetzt Ihr Produkt!" />
+  <meta name="keywords" content="Puriva" />
   <meta name="robots" content="noindex, nofollow">
-  <title>Puriva Offiziell</title>
-  
+  <meta http-equiv="Content-Language" content="de">
+  <title>Puriva</title>
   <style>
-    /* Estilos Gerais (Reset) */
-    body, html {
+    /* Allgemeine Stile */
+    body,
+    html {
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      overflow: hidden; /* Trava a rolagem */
-      background-color: #333; /* Fundo de segurança */
+      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
-    /* A IMAGEM DE FUNDO */
     .background {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      
-      /* AQUI ESTÁ A CORREÇÃO: Usando o link absoluto que funciona */
-      background-image: url('https://linkmall.shop/puriva/puriva.png');
-      
       background-size: cover;
-      background-position: center;
       background-repeat: no-repeat;
-      
-      /* Filtro escuro igual ao do Fignar (brightness 45%) */
       filter: brightness(45%);
+      background-image: url('puriva.png'); /* Ändern Sie hier den Hintergrund auf die Puriva-Bilddatei */
       z-index: -1;
     }
 
-    /* Ajuste para Celular (Media Query do Fignar) */
     @media (max-width: 431px) {
       .background {
-        /* Garante que carregue também no mobile */
-        background-image: url('https://linkmall.shop/puriva/puriva.png');
-        background-position: center top; /* Foca no topo da imagem no celular */
-      }
-      .modal {
-        width: 300px !important; /* Força largura do modal no mobile */
-        padding: 20px !important;
+        background-image: url('puriva.png'); /* Für kleinere Geräte */
       }
     }
 
-    /* O MODAL (Caixa Central) */
-    .modal-wrapper {
-      position: fixed;
-      top: 0; 
-      left: 0;
-      width: 100%; 
-      height: 100%;
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
+    /* Stil für den Inhalt */
+    .content {
+      text-align: center;
+      color: white;
+      max-width: 90%;
+      margin: 0 auto;
     }
 
-    .modal {
-      background-color: #c2c6cb;
-      border: 2px solid white;
-      padding: 40px;
-      margin: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      text-align: left;
-      width: 700px; /* Largura Desktop */
-      position: relative;
-    }
-
-    /* Botão Fechar (X) */
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: transparent;
-      border: none;
-      font-size: 1.5em;
-      color: #333;
-      cursor: pointer;
+    h1 {
+      font-size: 3em;
       font-weight: bold;
     }
 
-    .modal h2 {
-      margin: 0 0 10px;
-      font-size: 1.75rem;
-      color: #000;
+    h2 {
+      font-size: 2em;
+      margin-top: 10px;
     }
 
-    .modal p {
-      font-size: 1em;
-      margin-bottom: 20px;
-      color: #333;
-      line-height: 1.4;
+    p {
+      font-size: 1.2em;
+      margin-top: 15px;
+      line-height: 1.6;
     }
 
-    /* Botão Aceitar */
-    .afiliate-link {
-      margin-top: 5px;
-      background: #0043ff;
+    .cta-button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #ff6f61;
       color: white;
-      border: none;
+      text-decoration: none;
+      font-size: 1.2em;
       border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-      text-decoration: none; /* Remove sublinhado */
-      padding: 9px 15px 10px 15px;
-      display: inline-block;
+      transition: background-color 0.3s;
     }
 
-    .afiliate-link:hover {
-      background: #0033cc;
+    .cta-button:hover {
+      background-color: #e85c53;
     }
+
   </style>
-
-  <script>
-    function goOffer() {
-      // --- COLOQUE SEU LINK AQUI ---
-      window.location.href = "SEU_LINK_DE_AFILIADO_AQUI";
-    }
-  </script>
 </head>
 
 <body>
 
   <div class="background"></div>
-  
-  <div class="modal-wrapper" onclick="if(event.target === this) goOffer()">
-    
-    <div class="modal">
-      <button class="close-btn" onclick="goOffer()">×</button>
-      
-      <h2>Cookie-Richtlinie</h2>
-      <p>
-        Diese Website verwendet Cookies, um Inhalte zu personalisieren, Funktionen für soziale Medien anzubieten und unseren Datenverkehr zu analysieren. Durch Klicken auf "Akzeptieren" stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <span style="color: #0001ff; cursor:pointer;" onclick="goOffer()">Cookie-Richtlinie</span>.
-      </p>
-      
-      <a href="SEU_LINK_DE_AFILIADO_AQUI" class="afiliate-link">AKZEPTIEREN</a>
-    </div>
 
+  <div class="content">
+    <h1>Puriva Kapseln: Ihre natürliche Lösung für Gewichtsverlust!</h1>
+    <h2>Verwandeln Sie Ihre Gewichtsabnahme-Reise und verbessern Sie Ihre Darmgesundheit mit nur 2 Puriva-Kapseln pro Tag!</h2>
+    
+    <p><strong>Die Puriva Kapseln helfen Ihnen dabei:</strong></p>
+    <ul>
+      <li><strong>Den Hunger zu reduzieren:</strong> Kontrollieren Sie Ihren Appetit mit natürlichen Zutaten.</li>
+      <li><strong>Den Gewichtsverlust zu beschleunigen:</strong> Verbrennen Sie Fett schneller für einen aktiven Lebensstil.</li>
+      <li><strong>Die Verdauung zu verbessern:</strong> Reduzieren Sie Blähungen und lindern Sie Verstopfung.</li>
+      <li><strong>Die Energielevel zu steigern:</strong> Fühlen Sie sich den ganzen Tag über energiegeladen.</li>
+      <li><strong>Den Stoffwechsel zu beschleunigen:</strong> Fördern Sie die Fettverbrennung auf effektive Weise.</li>
+    </ul>
+
+    <h2>100% natürliche, wissenschaftlich bewährte Inhaltsstoffe</h2>
+    <p>Die Puriva Kapseln bestehen aus 100% natürlichen Zutaten, die wissenschaftlich bewiesen sind und bei folgenden Aspekten helfen:</p>
+    <ul>
+      <li>Appetithemmung</li>
+      <li>Fettverbrennung</li>
+      <li>Verbesserung der Verdauung</li>
+      <li>Steigerung der Energie und Stoffwechselbeschleunigung</li>
+    </ul>
+
+    <h2>Warum Puriva wählen?</h2>
+    <ul>
+      <li><strong>Sicher und effektiv:</strong> Hergestellt aus natürlichen, bewährten Inhaltsstoffen.</li>
+      <li><strong>Wissenschaftlich getestet:</strong> Unterstützt durch Forschung zur Gewichtsregulierung.</li>
+      <li><strong>Einfache Anwendung:</strong> Nur 2 Kapseln pro Tag für optimale Ergebnisse.</li>
+    </ul>
+
+    <p><strong>Kaufen Sie jetzt zum besten Preis!</strong></p>
+    <p>Erhalten Sie 3 Monate Puriva für nur 1,22 € pro Tag. Profitieren Sie von 46% RABATT + kostenlosem Versand!</p>
+    
+    <a href="#" class="cta-button">Jetzt Kaufen</a>
   </div>
 
 </body>
-</html>
 
-</body>
 </html>

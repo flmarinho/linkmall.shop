@@ -9,7 +9,7 @@
   <title>Puriva Offiziell</title>
   
   <style>
-    /* Reset básico */
+    /* Estilos Gerais (Reset) */
     body, html {
       margin: 0;
       padding: 0;
@@ -17,116 +17,114 @@
       width: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       overflow: hidden; /* Trava a rolagem */
-      background-color: #1a1a1a; /* Cor de fundo de segurança */
+      background-color: #333; /* Fundo de segurança */
     }
 
     /* A IMAGEM DE FUNDO */
     .background {
-      position: fixed;
-      top: 0; 
+      position: absolute;
+      top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1; /* Fica atrás do modal */
+      right: 0;
+      bottom: 0;
       
-      /* --- USANDO O LINK COMPLETO QUE VOCÊ ENVIOU --- */
+      /* AQUI ESTÁ A CORREÇÃO: Usando o link absoluto que funciona */
       background-image: url('https://linkmall.shop/puriva/puriva.png');
       
-      /* Configuração para cobrir a tela (Responsivo) */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       
-      /* Filtro escuro (Igual Fignar) */
-      filter: brightness(45%); 
+      /* Filtro escuro igual ao do Fignar (brightness 45%) */
+      filter: brightness(45%);
+      z-index: -1;
     }
 
-    /* O WRAPPER DO MODAL (Área clicável) */
+    /* Ajuste para Celular (Media Query do Fignar) */
+    @media (max-width: 431px) {
+      .background {
+        /* Garante que carregue também no mobile */
+        background-image: url('https://linkmall.shop/puriva/puriva.png');
+        background-position: center top; /* Foca no topo da imagem no celular */
+      }
+      .modal {
+        width: 300px !important; /* Força largura do modal no mobile */
+        padding: 20px !important;
+      }
+    }
+
+    /* O MODAL (Caixa Central) */
     .modal-wrapper {
       position: fixed;
       top: 0; 
       left: 0;
       width: 100%; 
       height: 100%;
-      z-index: 999; /* Fica na frente da imagem */
+      z-index: 999;
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer; /* Mãozinha em toda a tela */
+      cursor: pointer;
     }
 
-    /* A CAIXA DE COOKIES */
     .modal {
       background-color: #c2c6cb;
       border: 2px solid white;
       padding: 40px;
       margin: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       text-align: left;
-      width: 90%;
-      max-width: 700px;
+      width: 700px; /* Largura Desktop */
       position: relative;
     }
 
-    /* BOTÃO "X" (FECHAR) */
-    a.close-btn {
+    /* Botão Fechar (X) */
+    .close-btn {
       position: absolute;
       top: 10px;
-      right: 15px;
-      text-decoration: none;
-      font-size: 28px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 1.5em;
       color: #333;
       cursor: pointer;
       font-weight: bold;
-      line-height: 1;
     }
-    a.close-btn:hover { color: #000; }
 
     .modal h2 {
-      margin: 0 0 15px;
-      font-size: 1.6rem;
+      margin: 0 0 10px;
+      font-size: 1.75rem;
       color: #000;
     }
 
     .modal p {
-      font-size: 1rem;
-      margin-bottom: 25px;
+      font-size: 1em;
+      margin-bottom: 20px;
       color: #333;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
-    /* BOTÃO DE AÇÃO */
-    a.afiliate-link {
+    /* Botão Aceitar */
+    .afiliate-link {
+      margin-top: 5px;
       background: #0043ff;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 1.1rem;
-      text-decoration: none;
-      padding: 12px 25px;
+      font-size: 1em;
+      text-decoration: none; /* Remove sublinhado */
+      padding: 9px 15px 10px 15px;
       display: inline-block;
-      font-weight: bold;
-      transition: background 0.2s;
     }
-    a.afiliate-link:hover { background: #0033cc; }
 
-    /* AJUSTE PARA CELULAR (VERTICAL) */
-    @media (max-width: 768px) {
-      .background {
-        /* Garante que a imagem preencha a altura total no celular */
-        background-size: auto 100vh;
-        background-position: center top;
-      }
-      .modal { padding: 25px; }
-      .modal h2 { font-size: 1.4rem; }
-      a.afiliate-link { display: block; text-align: center; width: 100%; }
+    .afiliate-link:hover {
+      background: #0033cc;
     }
   </style>
 
   <script>
-    // Função de Redirecionamento (Clique no fundo)
     function goOffer() {
       // --- COLOQUE SEU LINK AQUI ---
       window.location.href = "SEU_LINK_DE_AFILIADO_AQUI";
@@ -141,17 +139,20 @@
   <div class="modal-wrapper" onclick="if(event.target === this) goOffer()">
     
     <div class="modal">
-      <a href="SEU_LINK_DE_AFILIADO_AQUI" class="close-btn">&times;</a>
+      <button class="close-btn" onclick="goOffer()">×</button>
       
       <h2>Cookie-Richtlinie</h2>
       <p>
-        Diese Website verwendet Cookies, um Inhalte zu personalisieren, Funktionen für soziale Medien anzubieten und unseren Datenverkehr zu analysieren. Durch Klicken auf "Akzeptieren" stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <span style="color: #0001ff; text-decoration: underline;">Cookie-Richtlinie</span>.
+        Diese Website verwendet Cookies, um Inhalte zu personalisieren, Funktionen für soziale Medien anzubieten und unseren Datenverkehr zu analysieren. Durch Klicken auf "Akzeptieren" stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <span style="color: #0001ff; cursor:pointer;" onclick="goOffer()">Cookie-Richtlinie</span>.
       </p>
       
       <a href="SEU_LINK_DE_AFILIADO_AQUI" class="afiliate-link">AKZEPTIEREN</a>
     </div>
 
   </div>
+
+</body>
+</html>
 
 </body>
 </html>

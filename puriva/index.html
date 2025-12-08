@@ -9,53 +9,59 @@
   <title>Puriva Offiziell</title>
   
   <style>
-    /* Reset e Configurações Básicas */
+    /* Reset básico */
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      overflow: hidden; /* Trava a rolagem */
-      background-color: #1a1a1a; /* Cor de fundo caso a imagem falhe */
+      overflow: hidden; 
+      background-color: #1a1a1a; /* Cor de fundo se a imagem falhar */
     }
 
-    /* CONFIGURAÇÃO DA IMAGEM DE FUNDO */
+    /* A IMAGEM DE FUNDO */
     .background {
       position: fixed;
       top: 0; 
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1; /* Fica atrás de tudo */
+      z-index: 1; 
       
-      /* --- O NOME DO ARQUIVO TEM QUE SER EXATAMENTE ESTE --- */
-      background-image: url('puriva.png'); 
+      /* --- TENTATIVA DE CARREGAMENTO --- */
+      /* O CSS vai usar a primeira que funcionar (se você tiver dúvida da extensão) */
+      background-image: url('puriva.png'), url('Puriva.png'), url('puriva.jpg'), url('Puriva.jpg');
       
-      /* Faz a imagem cobrir a tela sem distorcer */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       
-      /* O Filtro Escuro (Estilo Fignar) */
+      /* Filtro escuro */
       filter: brightness(45%); 
     }
 
-    /* O WRAPPER (Área invisível que detecta o clique) */
+    /* Mensagem de Erro (Só aparece se a imagem falhar) */
+    .debug-msg {
+      display: none; /* Escondido por padrão */
+      position: absolute; top: 10px; left: 10px; 
+      color: yellow; background: red; padding: 5px; z-index: 9999;
+      font-size: 12px;
+    }
+
+    /* O WRAPPER */
     .modal-wrapper {
       position: fixed;
-      top: 0; 
-      left: 0;
-      width: 100%; 
-      height: 100%;
-      z-index: 999; /* Fica na frente da imagem */
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 999; 
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer; /* Mãozinha em toda a tela */
+      cursor: pointer;
     }
 
-    /* A CAIXA CINZA (POP-UP) */
+    /* A CAIXA CINZA */
     .modal {
       background-color: #c2c6cb;
       border: 2px solid white;
@@ -69,11 +75,10 @@
       position: relative;
     }
 
-    /* BOTÃO "X" (FECHAR) */
+    /* BOTÃO X */
     a.close-btn {
       position: absolute;
-      top: 10px;
-      right: 15px;
+      top: 10px; right: 15px;
       text-decoration: none;
       font-size: 28px;
       color: #333;
@@ -83,7 +88,6 @@
     }
     a.close-btn:hover { color: #000; }
 
-    /* Textos */
     .modal h2 {
       margin: 0 0 15px;
       font-size: 1.6rem;
@@ -97,7 +101,7 @@
       line-height: 1.5;
     }
 
-    /* BOTÃO "AKZEPTIEREN" */
+    /* BOTÃO AKZEPTIEREN */
     a.afiliate-link {
       background: #0043ff;
       color: white;
@@ -113,25 +117,21 @@
     }
     a.afiliate-link:hover { background: #0033cc; }
 
-    /* RESPONSIVIDADE (CELULAR) */
+    /* MOBILE */
     @media (max-width: 768px) {
       .background {
-        /* No celular, foca na altura para a imagem não cortar errado */
         background-size: auto 100vh;
         background-position: center top;
       }
       .modal { padding: 25px; }
       .modal h2 { font-size: 1.4rem; }
-      
-      /* Botão largura total no mobile */
       a.afiliate-link { display: block; text-align: center; width: 100%; }
     }
   </style>
 
   <script>
-    // Função de Redirecionamento (Clique no fundo)
     function goOffer() {
-      // --- COLOQUE SEU LINK AQUI ---
+      // COLOQUE SEU LINK AQUI
       window.location.href = "SEU_LINK_DE_AFILIADO_AQUI";
     }
   </script>
@@ -142,7 +142,6 @@
   <div class="background"></div>
   
   <div class="modal-wrapper" onclick="if(event.target === this) goOffer()">
-    
     <div class="modal">
       <a href="SEU_LINK_DE_AFILIADO_AQUI" class="close-btn">&times;</a>
       
@@ -153,7 +152,6 @@
       
       <a href="SEU_LINK_DE_AFILIADO_AQUI" class="afiliate-link">AKZEPTIEREN</a>
     </div>
-
   </div>
 
 </body>

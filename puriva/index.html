@@ -9,7 +9,7 @@
   <title>Puriva Offiziell</title>
   
   <style>
-    /* Reset básico */
+    /* Reset e Configurações Básicas */
     body, html {
       margin: 0;
       padding: 0;
@@ -17,52 +17,52 @@
       width: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       overflow: hidden; /* Trava a rolagem */
-      background-color: #222; /* Fundo de segurança */
+      background-color: #1a1a1a; /* Cor de fundo caso a imagem falhe */
     }
 
-    /* A IMAGEM DE FUNDO */
+    /* CONFIGURAÇÃO DA IMAGEM DE FUNDO */
     .background {
       position: fixed;
       top: 0; 
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1; /* Fica atrás do modal */
+      z-index: 1; /* Fica atrás de tudo */
       
-      /* NOME DO ARQUIVO CONFIRMADO: puriva.png */
+      /* --- O NOME DO ARQUIVO TEM QUE SER EXATAMENTE ESTE --- */
       background-image: url('puriva.png'); 
       
-      /* Configuração Padrão (Desktop) */
+      /* Faz a imagem cobrir a tela sem distorcer */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       
-      /* Filtro escuro para destacar o texto */
+      /* O Filtro Escuro (Estilo Fignar) */
       filter: brightness(45%); 
     }
 
-    /* O WRAPPER (Área clicável) */
+    /* O WRAPPER (Área invisível que detecta o clique) */
     .modal-wrapper {
       position: fixed;
       top: 0; 
       left: 0;
       width: 100%; 
       height: 100%;
-      z-index: 999;
+      z-index: 999; /* Fica na frente da imagem */
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
+      cursor: pointer; /* Mãozinha em toda a tela */
     }
 
-    /* A CAIXA CENTRAL */
+    /* A CAIXA CINZA (POP-UP) */
     .modal {
-      background-color: #c2c6cb; /* Cinza estilo sistema */
+      background-color: #c2c6cb;
       border: 2px solid white;
       padding: 40px;
       margin: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       text-align: left;
       width: 90%;
       max-width: 700px;
@@ -83,6 +83,7 @@
     }
     a.close-btn:hover { color: #000; }
 
+    /* Textos */
     .modal h2 {
       margin: 0 0 15px;
       font-size: 1.6rem;
@@ -96,9 +97,9 @@
       line-height: 1.5;
     }
 
-    /* BOTÃO ACEITAR */
+    /* BOTÃO "AKZEPTIEREN" */
     a.afiliate-link {
-      background: #0043ff; /* Azul Trust */
+      background: #0043ff;
       color: white;
       border: none;
       border-radius: 5px;
@@ -112,26 +113,25 @@
     }
     a.afiliate-link:hover { background: #0033cc; }
 
-    /* AJUSTE MOBILE (VERTICAL) */
+    /* RESPONSIVIDADE (CELULAR) */
     @media (max-width: 768px) {
       .background {
-        /* No celular, foca na altura para não cortar as laterais importantes */
+        /* No celular, foca na altura para a imagem não cortar errado */
         background-size: auto 100vh;
         background-position: center top;
       }
-      
       .modal { padding: 25px; }
       .modal h2 { font-size: 1.4rem; }
       
-      /* Botão largura total no celular */
+      /* Botão largura total no mobile */
       a.afiliate-link { display: block; text-align: center; width: 100%; }
     }
   </style>
 
   <script>
-    // Função para cliques na área cinza (fora da caixa)
+    // Função de Redirecionamento (Clique no fundo)
     function goOffer() {
-      // IMPORTANTE: Mude o link aqui também
+      // --- COLOQUE SEU LINK AQUI ---
       window.location.href = "SEU_LINK_DE_AFILIADO_AQUI";
     }
   </script>

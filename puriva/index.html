@@ -9,18 +9,18 @@
   <title>Puriva Offiziell</title>
   
   <style>
-    /* Reset básico e estrutura de tela cheia */
+    /* Reset básico */
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      overflow: hidden; /* Impede rolagem da página */
-      background-color: #333; /* Fundo de segurança */
+      overflow: hidden; /* Trava a rolagem */
+      background-color: #222; /* Fundo de segurança */
     }
 
-    /* A IMAGEM DE FUNDO (PURIVA) */
+    /* A IMAGEM DE FUNDO */
     .background {
       position: fixed;
       top: 0; 
@@ -29,38 +29,38 @@
       height: 100%;
       z-index: 1; /* Fica atrás do modal */
       
-      /* NOME EXATO DA SUA IMAGEM */
+      /* NOME DO ARQUIVO CONFIRMADO: puriva.png */
       background-image: url('puriva.png'); 
       
-      /* Configuração para cobrir a tela toda (Responsivo) */
+      /* Configuração Padrão (Desktop) */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       
-      /* Filtro escuro para destacar o pop-up */
+      /* Filtro escuro para destacar o texto */
       filter: brightness(45%); 
     }
 
-    /* O WRAPPER DO MODAL (Centraliza a caixa) */
+    /* O WRAPPER (Área clicável) */
     .modal-wrapper {
       position: fixed;
       top: 0; 
       left: 0;
       width: 100%; 
       height: 100%;
-      z-index: 999; /* Fica na frente da imagem */
+      z-index: 999;
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer; /* Mostra a mãozinha de clique em tudo */
+      cursor: pointer;
     }
 
-    /* A CAIXA CINZA CENTRAL */
+    /* A CAIXA CENTRAL */
     .modal {
-      background-color: #c2c6cb; /* Cor cinza padrão do modelo */
+      background-color: #c2c6cb; /* Cinza estilo sistema */
       border: 2px solid white;
       padding: 40px;
-      margin: 20px; /* Margem para não grudar na borda do celular */
+      margin: 20px;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
       text-align: left;
@@ -69,7 +69,7 @@
       position: relative;
     }
 
-    /* O BOTÃO "X" (FECHAR) COMO LINK */
+    /* BOTÃO "X" (FECHAR) */
     a.close-btn {
       position: absolute;
       top: 10px;
@@ -81,18 +81,14 @@
       font-weight: bold;
       line-height: 1;
     }
-    a.close-btn:hover {
-      color: #000;
-    }
+    a.close-btn:hover { color: #000; }
 
-    /* Título do Modal */
     .modal h2 {
       margin: 0 0 15px;
       font-size: 1.6rem;
       color: #000;
     }
 
-    /* Texto do Modal */
     .modal p {
       font-size: 1rem;
       margin-bottom: 25px;
@@ -100,9 +96,9 @@
       line-height: 1.5;
     }
 
-    /* O BOTÃO "AKZEPTIEREN" COMO LINK */
+    /* BOTÃO ACEITAR */
     a.afiliate-link {
-      background: #0043ff; /* Azul padrão */
+      background: #0043ff; /* Azul Trust */
       color: white;
       border: none;
       border-radius: 5px;
@@ -114,25 +110,28 @@
       font-weight: bold;
       transition: background 0.2s;
     }
+    a.afiliate-link:hover { background: #0033cc; }
 
-    a.afiliate-link:hover {
-      background: #0033cc;
-    }
-
-    /* Ajustes para telas pequenas (Celular) */
-    @media (max-width: 480px) {
+    /* AJUSTE MOBILE (VERTICAL) */
+    @media (max-width: 768px) {
+      .background {
+        /* No celular, foca na altura para não cortar as laterais importantes */
+        background-size: auto 100vh;
+        background-position: center top;
+      }
+      
       .modal { padding: 25px; }
       .modal h2 { font-size: 1.4rem; }
-      .modal p { font-size: 0.95rem; }
-      /* No celular, o botão ocupa a largura total */
+      
+      /* Botão largura total no celular */
       a.afiliate-link { display: block; text-align: center; width: 100%; }
     }
   </style>
 
   <script>
-    // Função que redireciona quando clica no fundo (fora da caixa)
+    // Função para cliques na área cinza (fora da caixa)
     function goOffer() {
-      // --- IMPORTANTE: COLOQUE SEU LINK AQUI EMBAIXO ---
+      // IMPORTANTE: Mude o link aqui também
       window.location.href = "SEU_LINK_DE_AFILIADO_AQUI";
     }
   </script>

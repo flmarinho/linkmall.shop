@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Offizielle Puriva Seite" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>Puriva Offiziell</title>
+  
+  <style>
+    /* Reset básico e estrutura de tela cheia */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      overflow: hidden; /* Impede rolagem da página */
+      background-color: #333; /* Fundo de segurança */
+    }
+
+    /* A IMAGEM DE FUNDO (PURIVA) */
+    .background {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* Fica atrás do modal */
+      
+      /* NOME EXATO DA SUA IMAGEM */
+      background-image: url('puriva.png'); 
+      
+      /* Configuração para cobrir a tela toda (Responsivo) */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      
+      /* Filtro escuro para destacar o pop-up */
+      filter: brightness(45%); 
+    }
+
+    /* O WRAPPER DO MODAL (Centraliza a caixa) */
+    .modal-wrapper {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      z-index: 999; /* Fica na frente da imagem */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; /* Mostra a mãozinha de clique em tudo */
+    }
+
+    /* A CAIXA CINZA CENTRAL */
+    .modal {
+      background-color: #c2c6cb; /* Cor cinza padrão do modelo */
+      border: 2px solid white;
+      padding: 40px;
+      margin: 20px; /* Margem para não grudar na borda do celular */
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      text-align: left;
+      width: 90%;
+      max-width: 700px;
+      position: relative;
+    }
+
+    /* O BOTÃO "X" (FECHAR) COMO LINK */
+    a.close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      text-decoration: none;
+      font-size: 28px;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1;
+    }
+    a.close-btn:hover {
+      color: #000;
+    }
+
+    /* Título do Modal */
+    .modal h2 {
+      margin: 0 0 15px;
+      font-size: 1.6rem;
+      color: #000;
+    }
+
+    /* Texto do Modal */
+    .modal p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* O BOTÃO "AKZEPTIEREN" COMO LINK */
+    a.afiliate-link {
+      background: #0043ff; /* Azul padrão */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      text-decoration: none;
+      padding: 12px 25px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    a.afiliate-link:hover {
+      background: #0033cc;
+    }
+
+    /* Ajustes para telas pequenas (Celular) */
+    @media (max-width: 480px) {
+      .modal { padding: 25px; }
+      .modal h2 { font-size: 1.4rem; }
+      .modal p { font-size: 0.95rem; }
+      /* No celular, o botão ocupa a largura total */
+      a.afiliate-link { display: block; text-align: center; width: 100%; }
+    }
+  </style>
+
+  <script>
+    // Função que redireciona quando clica no fundo (fora da caixa)
+    function goOffer() {
+      // --- IMPORTANTE: COLOQUE SEU LINK AQUI EMBAIXO ---
+      window.location.href = "SEU_LINK_DE_AFILIADO_AQUI";
+    }
+  </script>
+</head>
+
+<body>
+
+  <div class="background"></div>
+  
+  <div class="modal-wrapper" onclick="if(event.target === this) goOffer()">
+    
+    <div class="modal">
+      <a href="SEU_LINK_DE_AFILIADO_AQUI" class="close-btn">&times;</a>
+      
+      <h2>Cookie-Richtlinie</h2>
+      <p>
+        Diese Website verwendet Cookies, um Inhalte zu personalisieren, Funktionen für soziale Medien anzubieten und unseren Datenverkehr zu analysieren. Durch Klicken auf "Akzeptieren" stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <span style="color: #0001ff; text-decoration: underline;">Cookie-Richtlinie</span>.
+      </p>
+      
+      <a href="SEU_LINK_DE_AFILIADO_AQUI" class="afiliate-link">AKZEPTIEREN</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

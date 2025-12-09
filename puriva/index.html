@@ -1,51 +1,77 @@
 <!DOCTYPE html>
-
-<html lang="sp">
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Kaufe jetzt und erhalte dein Produkt mit schneller und sicherer Lieferung. Genieße die Qualität und nutze diese Gelegenheit, es in deinen Händen zu haben." name="description"/>
-<meta content="Foot Trooper" name="keywords"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puriva Cookies - Deliciosos e Saudáveis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
 
-<meta content="sp" http-equiv="Content-Language"/>
-<title>Foot Trooper</title>
-<style>
-    /* Estilos gerais */
-    body,
-    html {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+        .header {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAC4AAAAWgCAIAAAA66VtJAAADFmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4g...'); /* Substitua este valor pela string completa base64 da imagem */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
 
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-      filter: brightness(45%);
-      z-index: -1;
-    }
+        .content {
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-    @media (max-width: 431px) {
-      .background {
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAC4AAAAWgCAIAAAA66VtJAAADFmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78i...");
-      }
-    }
-</style>
+        .content h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #ff6347;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #ff4500;
+        }
+    </style>
 </head>
 <body>
-    <div class="background"></div>
-    <!-- Rest of the HTML content remains unchanged -->
+    <div class="header">
+        <div class="content">
+            <h1>Puriva - O Cookie Saudável para Você</h1>
+            <p>Desfrute do sabor perfeito sem culpa. Nossos Cookies Puriva são 100% saudáveis, deliciosos e oferecem a energia que você precisa para começar o seu dia com o pé direito.</p>
+            <a href="#order" class="button">Compre Agora</a>
+        </div>
+    </div>
+
+    <section id="order" style="padding: 40px; text-align: center;">
+        <h2>Garanta já o seu Cookie Puriva!</h2>
+        <p>Faça sua compra agora mesmo e experimente o sabor que vai transformar sua rotina. Compre e receba rapidinho!</p>
+        <a href="#" class="button">Comprar Agora</a>
+    </section>
 </body>
 </html>
